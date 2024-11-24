@@ -1,0 +1,16 @@
+section {
+    padding: 30px 0;
+    height: 100%;
+    background-color: #080808;
+    color: white;
+    flex-grow: 1;
+}
+
+img {
+    width: 80px;
+}
+
+h3 {
+    margin: 30px;
+}
+

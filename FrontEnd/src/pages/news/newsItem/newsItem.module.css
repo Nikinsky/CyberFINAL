@@ -1,0 +1,153 @@
+.section {
+  width: 100%;
+  max-width: 370px;
+}
+
+.image {
+  /* background: linear-gradient(to top, black, transparent); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  height: 300px;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: end;
+  color: white;
+  font-size: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.title {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.image::before {
+  position: absolute;
+  transform: rotate(-30deg);
+  left: -400px;
+  top: 40%;
+  content: "";
+  width: 700px;
+  height: 30px;
+  animation-delay: 4s;
+  box-shadow: 3px 3px 33px 8px gold;
+  background-color: rgb(253, 245, 199);
+  animation: lineImage 3s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes lineImage {
+  0% {
+    left: -500px;
+  }
+  50% {
+    left: 900px;
+  }
+  60% {
+    left: 400px;
+  }
+  70% {
+    left: 400px;
+  }
+  80% {
+    left: 400px;
+  }
+  90% {
+    left: 400px;
+  }
+  91% {
+    left: 400px;
+  }
+  92% {
+    left: 400px;
+  }
+  93% {
+    left: 400px;
+  }
+  100% {
+    left: 400px;
+  }
+}
+
+.text {
+  width: 100%;
+  color: white;
+  padding: 10px;
+}
+.date {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.date p {
+  font-size: 25px;
+}
+.date button {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  font-size: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.date button::before {
+  position: absolute;
+  transform: rotate(-30deg);
+  left: -400px;
+  content: "";
+  width: 500px;
+  height: 30px;
+  animation-delay: 4s;
+  background-color: aliceblue;
+  animation: line 2.5s linear infinite;
+}
+
+@keyframes line {
+  0% {
+    left: -500px;
+  }
+  50% {
+    left: 900px;
+  }
+  60% {
+    left: 300px;
+  }
+  70% {
+    left: 300px;
+  }
+  80% {
+    left: 300px;
+  }
+  90% {
+    left: 300px;
+  }
+  100% {
+    left: 300px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .date button {
+    width: 160px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  .section {
+    max-width: 320px;
+  }
+}
