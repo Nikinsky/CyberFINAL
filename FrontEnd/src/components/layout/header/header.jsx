@@ -13,6 +13,7 @@ const Header = () => {
                     <img src="images/kglogo.png" alt="" />
                 </NavLink>
                 <nav className={`${s.nav} ${s.close_nav}`}>
+                    <NavLink to='/' className={s.item}>Главная</NavLink>
                     <NavLink to='/news' className={s.item}>Новости</NavLink>
                     <NavLink to='/community' className={s.item}>Мероприятие</NavLink>
                     <NavLink to="/contact" className={s.item}>Контакты</NavLink>
@@ -21,6 +22,7 @@ const Header = () => {
                 <img onClick={() => setShow(!show)} src="images/close.png" className={show ? s.close : s.n} alt="" />
                 <div className={ show ? s.burger_block : s.n}>
                     <nav className={s.nav}>
+                        <NavLink onClick={() => setShow(!show)} to="/" className={s.item}>Главная</NavLink>
                         <NavLink onClick={() => setShow(!show)} to="/news" className={s.item}>Новости</NavLink>
                         <NavLink onClick={() => setShow(!show)} to="/community" className={s.item}>Мероприятие</NavLink>
                         <NavLink onClick={() => setShow(!show)} to="/contact" className={s.item}>Контакты</NavLink>
