@@ -1,6 +1,6 @@
 .video {
     position: relative;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
 }
   
@@ -46,4 +46,13 @@
     font-weight: 700;
     margin: 0;
     padding: 0;
+}
+
+@media (max-width: 485px) {
+    .item {
+        padding: 0 15px;
+    }
+    .num {
+        font-size: 45px;
+    }
 }

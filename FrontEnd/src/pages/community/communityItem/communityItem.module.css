@@ -3,24 +3,15 @@
     z-index: 7;
     width: 75%;
     height: 200px;
-    background-color: rgba(15, 15, 15, 0.842);
+    display: flex;
+    align-items: center;
+    background-color: rgba(15, 15, 15);
     animation: middle 1s linear;
     transition: .3s linear;
     color: gray;
   }
   
-  .center:hover {
-    /* width: 80%; */
-    transform: scale(1.1);
-    background-color: rgba(15, 15, 15, 0.932);
-    color: white;
-  
-  }
-  
-  .center:hover .circle {
-    background-color: rgba(15, 15, 15, 0.932);
-  
-  }
+
   @keyframes middle {
     0% {
       transform: translate(100%,0);
@@ -54,7 +45,7 @@
     0 0 10px cyan,
     0 0 20px cyan,
     0 0 40px cyan,
-    0 0 80px cyan;
+    0 0 80px cyan;  
   }
 
   .date {
@@ -78,10 +69,12 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background-color: rgba(15, 15, 15, 0.842);
+    background-color: rgba(15, 15, 15);
     position: absolute;
-    left: -105px;
-    top: 20px;
+    left: 0;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
     transition: .3s linear;
     display: flex;
     justify-content: center;
@@ -89,28 +82,26 @@
   }
   
   
-  @media (max-width:1440px) {
 
-      .center {
-        height: 130px;
-        width: 60%;
-      }
-      .box {
-        font-size: 30px;
   
-        padding: 10px 100px;
-      }
-      .circle {
-        top: -12px;
-        height: 175px;
-        width: 175px;
-      }
-      .circle img {
-        width: 100px;
-      }
+  
+
+
+  @media (max-width: 844px) {
+    .center {
+      height: 170px;
+    }
+
+    .box {
+      padding: 0px 0 0px 120px;
+      font-size: 30px;
+    }
+
+    .circle {
+      height: 210px;
+      width: 210px;
+    }
   }
-  
-  
 
 
   @media (max-width: 768px) {
@@ -118,8 +109,6 @@
 
 
     .center {
-      /* box-shadow: -12px 15px 48px -3px white; */
-
       background-color: #020213;
       width: 100%;
       height: 100px;
@@ -143,8 +132,8 @@
     .circle {
       background-color: #020213;
       box-shadow: -12px 15px 48px -3px rgb(123, 120, 120);
-
       left: 0;
+      transform: translate(0,-50%);
       width: 130px;
       height: 130px;
     }
