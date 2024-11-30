@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import s from "./regisHero.module.css"
 const RegisHero = () => {
 
@@ -9,8 +9,7 @@ const RegisHero = () => {
       seconds: 0
   });
 
-
-useEffect(() => {
+  useEffect(() => {
     const targetDate = new Date('2024-11-29T00:00:00');
     const calculateTimeLeft = () => {
         const now = new Date();
@@ -30,13 +29,39 @@ useEffect(() => {
     const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
-    }, []);
+  }, []);
+
+
+  const arrVideos = [
+    "/bg2.mp4",
+    "/bg3.mp4",
+    "/bg4.mp4",
+  ];
+
+  const randomIndex = Math.floor(Math.random() * arrVideos.length);
+  const [isVideo, setIsVideo] = useState(randomIndex);
+  const videoRef = useRef(null);
+
+  const handleVideoEnd = () => {
+      setIsVideo((prevIndex) => {
+          const nextIndex = (prevIndex + 1) % arrVideos.length; 
+          return nextIndex;
+      });
+  };
+
+  useEffect(() => {
+      if (videoRef.current) {
+          videoRef.current.load();
+          videoRef.current.play();
+      }
+  }, [isVideo]); 
+
 
 
   return (
     <div className={s.video}>
-      <video autoPlay muted loop id={s.bgVideo}>
-        <source src="/bg2.mp4" type="video/mp4" />
+      <video onEnded={handleVideoEnd} ref={videoRef} autoPlay id={s.bgVideo}>
+        <source src={arrVideos[isVideo]} type="video/mp4" />
       </video>
       <div className={s.content}>
         <div className="container">
