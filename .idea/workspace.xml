@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3d68362-c80c-49b6-9125-891143c845c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

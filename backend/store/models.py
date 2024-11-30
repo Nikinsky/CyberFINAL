@@ -31,3 +31,9 @@ class Registration(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.email}'
+
+class VideoSite(models.Model):
+    video = models.FileField()
+
+
+
