@@ -34,10 +34,12 @@ const Header = () => {
                     </NavLink>
                 </nav>
                 <div className="menu">
-                <input type="checkbox" id="burger-checkbox" className="burger-checkbox" />
-                <label className="burger" htmlFor="burger-checkbox"></label>
+                <div onClick={() => setShow(!show)} id="burger-checkbox" className="burger-checkbox burger" />
+                
 
-                    {/* {show && */}
+                {/* <input onClick={() => setShow(!show)} type="checkbox" id="burger-checkbox" className="burger-checkbox" />
+                <label className="burger" htmlFor="burger-checkbox"></label> */}
+                    {show &&
                     
                     <ul className='menu-list'>
                         <NavLink onClick={() => setShow(!show)} to="/" className='menu-item'>
@@ -53,7 +55,7 @@ const Header = () => {
                             Контакты
                         </NavLink>
                     </ul>
-                    {/* } */}
+                    } 
                 </div>
 
             </div>
