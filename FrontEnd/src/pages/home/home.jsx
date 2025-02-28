@@ -1,34 +1,71 @@
 import { useEffect, useState, useRef } from 'react';
 import s from "./home.module.css";
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getVideos } from '../../redux/videoSlice';
 
 const Home = () => {
+    const { video = [], status, error } = useSelector((state) => state.video);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getVideos());
+    }, [dispatch]);
+
     useEffect(() => {
         window.scrollTo(10, 0);
     }, []);
 
-    const arrVideos = [
-        "/bg2.mp4",
-        "/bg3.mp4"
-    ];
-
-    const randomIndex = Math.floor(Math.random() * arrVideos.length);
-    const [isVideo, setIsVideo] = useState(randomIndex);
-    const videoRef = useRef(null); // Реф для управления видео
+    const [isVideo, setIsVideo] = useState(0);
+    const videoRef = useRef(null);
 
     const handleVideoEnd = () => {
         setIsVideo((prevIndex) => {
-            const nextIndex = (prevIndex + 1) % arrVideos.length; // Цикличное переключение
+            const nextIndex = (prevIndex + 1) % (video.length || 1);
             return nextIndex;
         });
     };
 
     useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.load(); // Перезагрузить видео
-            videoRef.current.play(); // Начать воспроизведение
+        if (videoRef.current && video.length > 0) {
+            videoRef.current.load();
+            videoRef.current.play().catch((error) => {
+                console.log("Autoplay failed:", error);
+            });
         }
-    }, [isVideo]); // Срабатывает при изменении индекса видео
+    }, [isVideo, video]);
+
+    if (status === 'loading') {
+        return <div>Loading...</div>;
+    }
+
+    if (status === 'failed') {
+        return <div>Error: {error}</div>;
+    }
+
+    if (!video || video.length === 0) {
+        return (
+            <div className={s.home}>
+                <div className={s.video}>
+                    <div className={s.bg_video_placeholder}>Loading video...</div>
+                    <section className={s.hero}>
+                        <div className="container">
+                            <div className={s.info}>
+                                <h1>2600 Kyrgyzstan</h1>
+                                <p className={s.text}>
+                                    We're a hacker community thing. We meet the first Friday of the month at the [___________].
+                                </p>
+                                <NavLink to="/register" className={`${s.link} text-white`}>Register to the event</NavLink>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <section className={s.list_product}>
+                    {/* ... остальной код секции ... */}
+                </section>
+            </div>
+        );
+    }
 
     return (
         <div className={s.home}>
@@ -37,9 +74,10 @@ const Home = () => {
                     ref={videoRef}
                     onEnded={handleVideoEnd}
                     autoPlay
+                    muted // Ключевой атрибут для автопроигрывания
                     className={s.bg_video}
                 >
-                    <source src={arrVideos[isVideo]} type="video/mp4" />
+                    <source src={video[isVideo].video} type="video/mp4" />
                 </video>
                 <section className={s.hero}>
                     <div className="container">
