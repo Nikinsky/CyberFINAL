@@ -12,7 +12,11 @@ class NewsDetailViewSet(viewsets.ModelViewSet):
 
 class RaspisanieViewSet(viewsets.ModelViewSet):
     queryset = Raspisanie.objects.all()
-    serializer_class = RaspisanieSerializers
+    serializer_class = RaspisanieFullSerializer
+
+class RaspisanieTimerViewSet(viewsets.ModelViewSet):
+    queryset = Raspisanie.objects.all()
+    serializer_class = RaspisanieTimerSerializer
 
 
 class RegistrationViewSet(viewsets.ModelViewSet):

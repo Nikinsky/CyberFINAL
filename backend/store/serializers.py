@@ -12,11 +12,26 @@ class NewsDetailSerializers(serializers.ModelSerializer):
         model = News
         fields = ['id', 'title', 'date', 'description']
 
-class RaspisanieSerializers(serializers.ModelSerializer):
+
+class RaspisanieTimerSerializer(serializers.ModelSerializer):
+    countdown = serializers.SerializerMethodField()
+    date = serializers.DateTimeField(format("%d-%m-%Y"))
     class Meta:
         model = Raspisanie
-        fields = "__all__"
+        fields = ['title', 'address', 'date', 'countdown']
 
+    def get_countdown(self, obj):
+        return obj.countdown  # или, если нужна дополнительная обработка, делайте её здесь
+
+class RaspisanieFullSerializer(serializers.ModelSerializer):
+    countdown = serializers.SerializerMethodField()
+    date = serializers.DateTimeField(format("%d-%m-%Y"))
+    class Meta:
+        model = Raspisanie
+        fields = ['title', 'description', 'image', 'address', 'date', 'countdown']
+
+    def get_countdown(self, obj):
+        return obj.countdown  # или, если нужна дополнительная обработка, делайте её здесь
 
 
 class RegistrationSerializers(serializers.ModelSerializer):
