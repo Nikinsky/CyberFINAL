@@ -7,8 +7,10 @@ from django.utils import timezone
 class News(models.Model):
     title = models.CharField(max_length=64)
     description = models.TextField()
-    date = models.DateField()
-    image = models.ImageField(null=True, blank=True)
+    description2 = models.TextField(null=True,blank=True)
+    description3 = models.TextField(null=True,blank=True)
+    date = models.DateField(auto_now_add=True)
+    image = models.ImageField(upload_to='news_img', null=True, blank=True)
 
     def __str__(self):
         return f'{self.title}'
@@ -18,9 +20,13 @@ class News(models.Model):
 class Raspisanie(models.Model):
     title = models.CharField(max_length=64)
     description = models.TextField()
-    image = models.ImageField(null=True, blank=True)
+    description2 = models.TextField(null=True,blank=True)
+    description3 = models.TextField(null=True,blank=True)
+    image = models.ImageField(upload_to='raspi_img', null=True, blank=True)
     address = models.CharField(max_length=64)
-    date = models.DateTimeField()
+    date = models.DateTimeField(help_text="Дата мероприятия")
+    date_at = models.DateField(auto_now_add=True)
+
 
     def __str__(self):
         return f'{self.title} - {self.address}'
@@ -49,7 +55,7 @@ class Raspisanie(models.Model):
 
 class Registration(models.Model):
     name = models.CharField(max_length=32)
-    email = models.EmailField()
+    email = models.EmailField(null=True,blank=True)
     telegram = models.CharField(max_length=16)
 
 
@@ -57,7 +63,7 @@ class Registration(models.Model):
         return f'{self.name} - {self.email}'
 
 class VideoSite(models.Model):
-    video = models.FileField()
+    video = models.FileField(upload_to='video_site')
 
 
 
