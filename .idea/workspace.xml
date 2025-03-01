@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3d68362-c80c-49b6-9125-891143c845c8" name="Changes" comment="" />
+    <list default="true" id="c3d68362-c80c-49b6-9125-891143c845c8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/migrations/0002_remove_videosite_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/store/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,14 +30,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "fake__main",
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/CyberFINAL"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/CyberFINAL&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
